@@ -1,0 +1,18 @@
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+    .desserts_container,
+    .cart {
+        width: 100%;
+    }
+
+    .cart {
+        padding: 24px;
+    }
+
+    .cart h2 {
+        text-align: left;
+    }
+}
