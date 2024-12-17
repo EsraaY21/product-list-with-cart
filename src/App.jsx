@@ -19,9 +19,9 @@ function App() {
                   <CartIcon />
                   <span>Add to Cart</span>
                 </button>
-                {/* <h3>{dessert.name}</h3> */}
-                {/* <p>{dessert.category}</p> */}
-                {/* <p>${dessert.price}</p> */}
+                <p className="category text-4">{dessert.category}</p>
+                <h3 className="name text-3">{dessert.name}</h3>
+                <p className="price text-3">${dessert.price.toFixed(2)}</p>
               </div>
             ))}
           </div>

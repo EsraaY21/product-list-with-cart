@@ -20,21 +20,27 @@ body,
 }
 
 .text-1 {
-    font-weight: 700;
     font-size: 40px;
+    font-weight: 700;
     line-height: 120%;
     color: var(--color-rose-900);
 }
 
 .text-2 {
-    font-weight: 700;
     font-size: 24px;
+    font-weight: 700;
     color: var(--color-red);
 }
 
-.text-4 {
+.text-3 {
+    font-size: 16px;
     font-weight: 600;
+    color: var(--color-rose-900);
+}
+
+.text-4 {
     font-size: 14px;
+    font-weight: 600;
     color: var(--color-rose-500);
 }
 
@@ -89,6 +95,19 @@ button.add_to_cart {
     outline: none;
     margin-inline: auto;
     transform: translateY(-50%);
+}
+
+.dessert_item .category {
+    font-weight: 400;
+}
+
+.dessert_item .name {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.dessert_item .price {
+    color: var(--color-red);
 }
 
 
