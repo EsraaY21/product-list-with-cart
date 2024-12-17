@@ -15,9 +15,9 @@ function App() {
                   alt={dessert.name}
                   className="dessert_image"
                 />
-                <button className="add_to_cart">
+                <button className="add_to_cart text-4">
                   <CartIcon />
-                  <span>Add to Cart</span>
+                  <span className="text-4">Add to Cart</span>
                 </button>
                 <p className="category text-4">{dessert.category}</p>
                 <h3 className="name text-3">{dessert.name}</h3>

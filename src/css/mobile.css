@@ -1,0 +1,10 @@
+@media (max-width:650px) {
+    body {
+        padding: 24px;
+    }
+
+    .dessert_list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+}

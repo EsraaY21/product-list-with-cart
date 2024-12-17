@@ -41,7 +41,6 @@ body,
 .text-4 {
     font-size: 14px;
     font-weight: 600;
-    color: var(--color-rose-500);
 }
 
 body {
@@ -110,6 +109,10 @@ button.add_to_cart {
     color: var(--color-red);
 }
 
+button span {
+    color: var(--color-rose-900);
+}
+
 
 
 /* Cart ************************************** */
@@ -126,4 +129,9 @@ button.add_to_cart {
     margin-top: 40px;
     margin-bottom: 16px;
     margin-inline: auto;
+}
+
+.cart p {
+    color: var(--color-rose-500);
+
 }
