@@ -10,18 +10,25 @@ function App() {
             {data.map((dessert, index) => (
               <div key={index} className="dessert_item">
                 <img
-                  src={dessert.image.thumbnail}
+                  src={dessert.image.desktop}
                   alt={dessert.name}
                   className="dessert_image"
                 />
-                {/* <h2>{dessert.name}</h2> */}
+                {/* <h3>{dessert.name}</h3> */}
                 {/* <p>{dessert.category}</p> */}
                 {/* <p>${dessert.price}</p> */}
               </div>
             ))}
           </div>
         </div>
-        <div className="cart"></div>
+        <div className="cart">
+          <h2 className="text-2">Your Cart (0)</h2>
+          <img
+            src="./assets/images/illustration-empty-cart.svg"
+            alt="Cart Icon"
+          />
+          <p className="text-4">Your added items will appear here</p>
+        </div>
       </main>
     </>
   );
@@ -30,4 +37,4 @@ function App() {
 export default App;
 
 // Your Cart (<!-- Quantity -->)
-// Your added items will appear here
+//
