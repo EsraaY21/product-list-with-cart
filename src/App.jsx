@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <main>
-        <div className="">
+        <div className="desserts_container">
           <h1 className="text-1">Desserts</h1>
           <div className="dessert_list">
             {data.map((dessert, index) => (
