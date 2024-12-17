@@ -1,3 +1,4 @@
+import CartIcon from "./components/icons/CartIcon";
 import data from "./data.json";
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
                   alt={dessert.name}
                   className="dessert_image"
                 />
+                <button className="add_to_cart">
+                  <CartIcon />
+                  <span>Add to Cart</span>
+                </button>
                 {/* <h3>{dessert.name}</h3> */}
                 {/* <p>{dessert.category}</p> */}
                 {/* <p>${dessert.price}</p> */}
@@ -35,6 +40,3 @@ function App() {
 }
 
 export default App;
-
-// Your Cart (<!-- Quantity -->)
-//
