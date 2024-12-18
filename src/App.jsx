@@ -41,24 +41,26 @@ function App() {
                     />
                   </picture>
 
-                  <button
-                    className={`add_to_cart cart_btn ${
-                      cartItem ? "hidden" : "visible"
-                    }`}
-                    onClick={() => handleAddToCart(dessert.id)}
-                  >
-                    <CartIcon />
-                    <span className="text-4">Add to Cart</span>
-                  </button>
+                  <div className="cart_btn_container">
+                    <button
+                      className={`add_to_cart  ${
+                        cartItem ? "hidden" : "visible"
+                      }`}
+                      onClick={() => handleAddToCart(dessert.id)}
+                    >
+                      <CartIcon />
+                      <span className="text-4">Add to Cart</span>
+                    </button>
 
-                  <div
-                    className={`update_cart_container cart_btn ${
-                      cartItem ? "visible" : "hidden"
-                    }`}
-                  >
-                    <MinusIcon />
-                    <span>{cartItem?.quantity || 1}</span>
-                    <PlusIcon />
+                    <div
+                      className={`update_cart ${
+                        cartItem ? "visible" : "hidden"
+                      }`}
+                    >
+                      <MinusIcon />
+                      <span>{cartItem?.quantity || 1}</span>
+                      <PlusIcon />
+                    </div>
                   </div>
 
                   <p className="category text-4">{dessert.category}</p>
