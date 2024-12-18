@@ -35,7 +35,6 @@ export default function AppProvider({ children }) {
           return prevItems;
       }
     });
-    console.log(cartItems);
   };
 
   return (
