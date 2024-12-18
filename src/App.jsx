@@ -10,11 +10,24 @@ function App() {
           <div className="dessert_list">
             {data.map((dessert, index) => (
               <div key={index} className="dessert_item">
-                <img
-                  src={dessert.image.desktop}
-                  alt={dessert.name}
-                  className="dessert_image"
-                />
+                <picture>
+                  {/* Mobile image (375px and below) */}
+                  <source
+                    srcSet={dessert.image.mobile}
+                    media="(max-width: 375px)"
+                  />
+                  {/* Tablet image (376px to 768px) */}
+                  <source
+                    srcSet={dessert.image.tablet}
+                    media="(max-width: 768px)"
+                  />
+                  {/* Desktop image (default fallback) */}
+                  <img
+                    src={dessert.image.desktop}
+                    alt={dessert.name}
+                    className="dessert_image"
+                  />
+                </picture>
                 <button className="add_to_cart text-4">
                   <CartIcon />
                   <span className="text-4">Add to Cart</span>

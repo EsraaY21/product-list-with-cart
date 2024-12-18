@@ -1,8 +1,23 @@
-# React + Vite
+aspect ratio
+width / height
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+       <picture>
+            {/* Mobile image (375px and below) */}
+            <source
+            srcSet={dessert.image.mobile}
+            media="(max-width: 375px)"
+            />
+            {/* Tablet image (376px to 768px) */}
+            <source
+            srcSet={dessert.image.tablet}
+            media="(max-width: 768px)"
+            />
+            {/* Desktop image (default fallback) */}
+            <img
+            src={dessert.image.desktop}
+            alt={dessert.name}
+            className="dessert_image"
+            />
+        </picture>
+```

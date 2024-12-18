@@ -7,4 +7,9 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
+    .dessert_item .dessert_image {
+        aspect-ratio: 1.542;
+    }
+
+
 }

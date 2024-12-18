@@ -77,7 +77,7 @@ h1 {
 .dessert_item .dessert_image {
     object-fit: cover;
     width: 100%;
-    aspect-ratio: 0.96;
+    aspect-ratio: 1.0417;
     border-radius: 8px;
 }
 
