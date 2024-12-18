@@ -46,7 +46,7 @@ function App() {
 
                   <button
                     className={`add_to_cart cart_btn ${
-                      cartItem ? "display_none" : ""
+                      cartItem ? "hide_btn" : ""
                     }`}
                     onClick={() => handleAddToCart(dessert.id)}
                   >
@@ -56,7 +56,7 @@ function App() {
 
                   <div
                     className={`update_cart_container cart_btn ${
-                      cartItem ? "" : "display_none"
+                      cartItem ? "" : "hide_btn"
                     }`}
                   >
                     <MinusIcon />
