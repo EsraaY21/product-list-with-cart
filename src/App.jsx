@@ -26,17 +26,14 @@ function App() {
               return (
                 <div key={dessert.id} className="dessert_item">
                   <picture>
-                    {/* Mobile image (375px and below) */}
                     <source
                       srcSet={dessert.image.mobile}
                       media="(max-width: 375px)"
                     />
-                    {/* Tablet image (376px to 768px) */}
                     <source
                       srcSet={dessert.image.tablet}
                       media="(max-width: 768px)"
                     />
-                    {/* Desktop image (default fallback) */}
                     <img
                       src={dessert.image.desktop}
                       alt={dessert.name}
@@ -46,7 +43,7 @@ function App() {
 
                   <button
                     className={`add_to_cart cart_btn ${
-                      cartItem ? "hide_btn" : ""
+                      cartItem ? "hidden" : "visible"
                     }`}
                     onClick={() => handleAddToCart(dessert.id)}
                   >
@@ -56,11 +53,11 @@ function App() {
 
                   <div
                     className={`update_cart_container cart_btn ${
-                      cartItem ? "" : "hide_btn"
+                      cartItem ? "visible" : "hidden"
                     }`}
                   >
                     <MinusIcon />
-                    <span>1</span>
+                    <span>{cartItem?.quantity || 1}</span>
                     <PlusIcon />
                   </div>
 

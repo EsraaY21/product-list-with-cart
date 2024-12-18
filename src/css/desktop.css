@@ -128,6 +128,20 @@ button span {
     color: var(--color-white);
 }
 
+/* Common styles for animated elements */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+
 
 /* Cart ************************************** */
 .cart {
