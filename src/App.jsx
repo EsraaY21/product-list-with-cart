@@ -13,6 +13,8 @@ function App() {
     setCartItems((prevItems) => {
       return [...prevItems, { ...dessert, quantity: 1 }];
     });
+
+    console.log(cartItems);
   };
 
   return (
