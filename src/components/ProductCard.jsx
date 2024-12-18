@@ -17,7 +17,7 @@ export default function ProductCard({ dessert }) {
         <img
           src={dessert.image.desktop}
           alt={dessert.name}
-          className="dessert_image"
+          className={`dessert_image ${cartItem ? "in_cart" : ""}`}
         />
       </picture>
 
