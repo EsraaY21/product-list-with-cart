@@ -97,26 +97,89 @@ h1 {
 
 /* Cart ************************************** */
 .cart {
-    padding-top: 24px;
-    padding-bottom: 40px;
+    padding: 24px;
     background-color: var(--color-white);
     border-radius: 12px;
-    text-align: center;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
+
 .cart img {
-    margin-top: 40px;
-    margin-bottom: 16px;
+    margin-top: 16px;
     margin-inline: auto;
 }
 
 .cart p {
     color: var(--color-rose-500);
+    text-align: center;
+    margin-bottom: 16px;
 }
 
+.cart ul {
+    display: flex;
+    flex-direction: column;
 
-/* Cart Item Buttons */
+}
+
+.cart ul li {
+    color: var(--color-rose-900);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart ul li h4 {
+    margin-bottom: 8px;
+}
+
+.cart ul li .details {
+    display: flex;
+    gap: 8px;
+}
+
+.cart ul li .quantity {
+    color: var(--color-red);
+}
+
+.cart ul li .price {
+    font-weight: 400;
+    color: var(--color-rose-500);
+}
+
+.cart ul li .total {
+    color: var(--color-rose-500);
+}
+
+.cart ul li .icon-container {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-rose-400);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cart ul li .icon-container svg path {
+    fill: var(--color-rose-400);
+    transition: all 0.3s ease;
+}
+
+.cart ul li .icon-container:hover {
+    border-color: var(--color-rose-900);
+}
+
+.cart ul li .icon-container:hover path {
+    fill: var(--color-rose-900);
+}
+
+/* Cart Item Buttons **** */
 .cart_btn_container {
     position: relative;
     transform: translateY(-50%);
@@ -160,10 +223,10 @@ button span {
     color: var(--color-white);
 }
 
-.icon-container {
+.update_cart .icon-container {
     width: 20px;
     height: 20px;
-    border: 1px solid var(--color-white);
+    border: 2px solid var(--color-white);
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -171,17 +234,17 @@ button span {
     transition: fill 0.3s ease;
 }
 
-.icon-container:hover {
+.update_cart .icon-container:hover {
     background-color: var(--color-white);
 }
 
-.icon-container svg path {
+.update_cart .icon-container svg path {
     fill: var(--color-white);
     transition: fill 0.3s ease;
 
 }
 
-.icon-container:hover path {
+.update_cart .icon-container:hover path {
     fill: var(--color-red);
 }
 

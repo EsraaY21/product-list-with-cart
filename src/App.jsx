@@ -3,6 +3,7 @@ import CartIcon from "./components/icons/CartIcon";
 import data from "./data.json";
 import PlusIcon from "./components/icons/PlusIcon";
 import MinusIcon from "./components/icons/MinusIcon";
+import RemoveIcon from "./components/icons/RemoveIcon";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -75,11 +76,34 @@ function App() {
         </div>
         <div className="cart">
           <h2 className="text-2">Your Cart ({cartItems.length})</h2>
-          <img
-            src="./assets/images/illustration-empty-cart.svg"
-            alt="Cart Icon"
-          />
-          <p className="text-4">Your added items will appear here</p>
+
+          {cartItems.length > 0 ? (
+            <ul>
+              {cartItems.map((item) => (
+                <li key={item.id}>
+                  <div className="text-4">
+                    <h4>{item.name}</h4>
+                    <div className="details">
+                      <span className="quantity">{item.quantity}x</span>
+                      <span className="price">@ ${item.price}</span>
+                      <span className="total">
+                        ${(item.price * item.quantity).toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
+                  <RemoveIcon />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <>
+              <img
+                src="./assets/images/illustration-empty-cart.svg"
+                alt="Cart Icon"
+              />
+              <p className="text-4">Your added items will appear here</p>
+            </>
+          )}
         </div>
       </main>
     </>
