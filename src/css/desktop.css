@@ -81,10 +81,6 @@ h1 {
     border-radius: 8px;
 }
 
-
-
-
-
 .dessert_item .category {
     font-weight: 400;
 }
@@ -164,6 +160,30 @@ button span {
     color: var(--color-white);
 }
 
+.icon-container {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color-white);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: fill 0.3s ease;
+}
+
+.icon-container:hover {
+    background-color: var(--color-white);
+}
+
+.icon-container svg path {
+    fill: var(--color-white);
+    transition: fill 0.3s ease;
+
+}
+
+.icon-container:hover path {
+    fill: var(--color-red);
+}
 
 .hidden {
     opacity: 0;
