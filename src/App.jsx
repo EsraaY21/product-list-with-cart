@@ -1,6 +1,8 @@
 import { useState } from "react";
 import CartIcon from "./components/icons/CartIcon";
 import data from "./data.json";
+import PlusIcon from "./components/icons/PlusIcon";
+import MinusIcon from "./components/icons/MinusIcon";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -39,13 +41,21 @@ function App() {
                     className="dessert_image"
                   />
                 </picture>
+
                 <button
-                  className="add_to_cart text-4"
+                  className="add_to_cart  cart_btn"
                   onClick={() => handleAddToCart(dessert.id)}
                 >
                   <CartIcon />
                   <span className="text-4">Add to Cart</span>
                 </button>
+
+                <div className="update_cart_container  cart_btn">
+                  <MinusIcon />
+                  <span>1</span>
+                  <PlusIcon />
+                </div>
+
                 <p className="category text-4">{dessert.category}</p>
                 <h3 className="name text-3">{dessert.name}</h3>
                 <p className="price text-3">${dessert.price.toFixed(2)}</p>
