@@ -6,9 +6,19 @@ import CarbonNeutralIcon from "./icons/CarbonNeutralIcon";
 export default function Cart() {
   const { cartItems } = useContext(AppContext);
 
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
   return (
     <div className="cart">
-      <h2 className="text-2">Your Cart ({cartItems.length})</h2>
+      <h2 className="text-2">Your Cart ({totalQuantity})</h2>
 
       {cartItems.length > 0 ? (
         <div className="cart_items">
@@ -32,7 +42,7 @@ export default function Cart() {
 
           <div className="sum">
             <p className="text">Order Total</p>
-            <p className="price">$46.50</p>
+            <p className="price">${totalPrice.toFixed(2)}</p>
           </div>
 
           <div className="note">
