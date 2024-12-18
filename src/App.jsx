@@ -1,7 +1,18 @@
+import { useState } from "react";
 import CartIcon from "./components/icons/CartIcon";
 import data from "./data.json";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleAddToCart = (id) => {
+    const dessert = data.find((item) => item.id === id);
+
+    setCartItems((prevItems) => {
+      return [...prevItems, { ...dessert, quantity: 1 }];
+    });
+  };
+
   return (
     <>
       <main>
@@ -28,7 +39,10 @@ function App() {
                     className="dessert_image"
                   />
                 </picture>
-                <button className="add_to_cart text-4">
+                <button
+                  className="add_to_cart text-4"
+                  onClick={() => handleAddToCart(dessert.id)}
+                >
                   <CartIcon />
                   <span className="text-4">Add to Cart</span>
                 </button>
@@ -40,7 +54,7 @@ function App() {
           </div>
         </div>
         <div className="cart">
-          <h2 className="text-2">Your Cart (0)</h2>
+          <h2 className="text-2">Your Cart ({cartItems.length})</h2>
           <img
             src="./assets/images/illustration-empty-cart.svg"
             alt="Cart Icon"
