@@ -28,10 +28,14 @@ export default function AppProvider({ children }) {
             )
             .filter((item) => item.quantity > 0);
 
+        case "remove":
+          return prevItems.filter((item) => item.id !== id);
+
         default:
           return prevItems;
       }
     });
+    console.log(cartItems);
   };
 
   return (

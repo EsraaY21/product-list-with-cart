@@ -4,7 +4,7 @@ import RemoveIcon from "./icons/RemoveIcon";
 import CarbonNeutralIcon from "./icons/CarbonNeutralIcon";
 
 export default function Cart() {
-  const { cartItems } = useContext(AppContext);
+  const { cartItems, handleCartUpdate } = useContext(AppContext);
 
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -35,7 +35,12 @@ export default function Cart() {
                     </span>
                   </div>
                 </div>
-                <RemoveIcon />
+                <div
+                  className="icon-container"
+                  onClick={() => handleCartUpdate(item.id, "remove")}
+                >
+                  <RemoveIcon />
+                </div>
               </li>
             ))}
           </ul>
