@@ -223,6 +223,15 @@ h1 {
     border-radius: 8px;
 }
 
+.note p {
+    font-weight: 400;
+}
+
+.note p span {
+    font-weight: 600;
+}
+
+
 .confirm_btn {
     color: var(--color-white);
     background-color: var(--color-red);

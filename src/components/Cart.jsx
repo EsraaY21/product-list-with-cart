@@ -52,7 +52,9 @@ export default function Cart() {
 
           <div className="note">
             <CarbonNeutralIcon />
-            <p>This is a carbon-neutral delivery</p>
+            <p className="text-4">
+              This is a <span>carbon-neutral</span> delivery
+            </p>
           </div>
 
           <button className="confirm_btn">Confirm Order</button>
