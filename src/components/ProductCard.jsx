@@ -5,7 +5,7 @@ import PlusIcon from "./icons/PlusIcon";
 import MinusIcon from "./icons/MinusIcon";
 
 export default function ProductCard({ dessert }) {
-  const { cartItems, handleAddToCart } = useContext(AppContext);
+  const { cartItems, handleCartUpdate } = useContext(AppContext);
 
   const cartItem = cartItems.find((item) => item.id === dessert.id);
 
@@ -24,16 +24,28 @@ export default function ProductCard({ dessert }) {
       <div className="cart_btn_container">
         <button
           className={`add_to_cart  ${cartItem ? "hidden" : "visible"}`}
-          onClick={() => handleAddToCart(dessert.id)}
+          onClick={() => handleCartUpdate(dessert.id, "add")}
         >
           <CartIcon />
           <span className="text-4">Add to Cart</span>
         </button>
 
         <div className={`update_cart ${cartItem ? "visible" : "hidden"}`}>
-          <MinusIcon />
+          <div
+            className="icon-container"
+            onClick={() => handleCartUpdate(dessert.id, "subtract")}
+          >
+            <MinusIcon />
+          </div>
+
           <span>{cartItem?.quantity || 1}</span>
-          <PlusIcon />
+
+          <div
+            className="icon-container"
+            onClick={() => handleCartUpdate(dessert.id, "add")}
+          >
+            <PlusIcon />
+          </div>
         </div>
       </div>
 

@@ -6,17 +6,44 @@ export const AppContext = createContext();
 export default function AppProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  const handleAddToCart = (id) => {
+  const handleCartUpdate = (id, action) => {
     const dessert = data.find((item) => item.id === id);
 
     setCartItems((prevItems) => {
-      return [...prevItems, { ...dessert, quantity: 1 }];
+      const existingItem = prevItems.find((item) => item.id === id);
+
+      switch (action) {
+        case "add":
+          if (existingItem) {
+            return prevItems.map((item) =>
+              item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+            );
+          }
+          return [...prevItems, { ...dessert, quantity: 1 }];
+
+        case "subtract":
+          return prevItems
+            .map((item) =>
+              item.id === id && item.quantity > 1
+                ? { ...item, quantity: item.quantity - 1 }
+                : item
+            )
+            .filter((item) => item.quantity > 0);
+
+        default:
+          return prevItems;
+      }
     });
   };
 
   return (
     <AppContext.Provider
-      value={{ cartItems, setCartItems, handleAddToCart, data }}
+      value={{
+        cartItems,
+        setCartItems,
+        data,
+        handleCartUpdate,
+      }}
     >
       {children}
     </AppContext.Provider>
