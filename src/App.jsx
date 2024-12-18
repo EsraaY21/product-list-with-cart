@@ -21,46 +21,55 @@ function App() {
         <div className="desserts_container">
           <h1 className="text-1">Desserts</h1>
           <div className="dessert_list">
-            {data.map((dessert, index) => (
-              <div key={index} className="dessert_item">
-                <picture>
-                  {/* Mobile image (375px and below) */}
-                  <source
-                    srcSet={dessert.image.mobile}
-                    media="(max-width: 375px)"
-                  />
-                  {/* Tablet image (376px to 768px) */}
-                  <source
-                    srcSet={dessert.image.tablet}
-                    media="(max-width: 768px)"
-                  />
-                  {/* Desktop image (default fallback) */}
-                  <img
-                    src={dessert.image.desktop}
-                    alt={dessert.name}
-                    className="dessert_image"
-                  />
-                </picture>
+            {data.map((dessert) => {
+              const cartItem = cartItems.find((item) => item.id === dessert.id);
+              return (
+                <div key={dessert.id} className="dessert_item">
+                  <picture>
+                    {/* Mobile image (375px and below) */}
+                    <source
+                      srcSet={dessert.image.mobile}
+                      media="(max-width: 375px)"
+                    />
+                    {/* Tablet image (376px to 768px) */}
+                    <source
+                      srcSet={dessert.image.tablet}
+                      media="(max-width: 768px)"
+                    />
+                    {/* Desktop image (default fallback) */}
+                    <img
+                      src={dessert.image.desktop}
+                      alt={dessert.name}
+                      className="dessert_image"
+                    />
+                  </picture>
 
-                <button
-                  className="add_to_cart  cart_btn"
-                  onClick={() => handleAddToCart(dessert.id)}
-                >
-                  <CartIcon />
-                  <span className="text-4">Add to Cart</span>
-                </button>
+                  <button
+                    className={`add_to_cart cart_btn ${
+                      cartItem ? "display_none" : ""
+                    }`}
+                    onClick={() => handleAddToCart(dessert.id)}
+                  >
+                    <CartIcon />
+                    <span className="text-4">Add to Cart</span>
+                  </button>
 
-                <div className="update_cart_container  cart_btn">
-                  <MinusIcon />
-                  <span>1</span>
-                  <PlusIcon />
+                  <div
+                    className={`update_cart_container cart_btn ${
+                      cartItem ? "" : "display_none"
+                    }`}
+                  >
+                    <MinusIcon />
+                    <span>1</span>
+                    <PlusIcon />
+                  </div>
+
+                  <p className="category text-4">{dessert.category}</p>
+                  <h3 className="name text-3">{dessert.name}</h3>
+                  <p className="price text-3">${dessert.price.toFixed(2)}</p>
                 </div>
-
-                <p className="category text-4">{dessert.category}</p>
-                <h3 className="name text-3">{dessert.name}</h3>
-                <p className="price text-3">${dessert.price.toFixed(2)}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
         <div className="cart">
