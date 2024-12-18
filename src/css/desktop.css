@@ -109,13 +109,20 @@ h1 {
 
 .cart img {
     margin-top: 16px;
+    margin-bottom: 24px;
     margin-inline: auto;
 }
 
-.cart p {
+.empty p {
     color: var(--color-rose-500);
     text-align: center;
     margin-bottom: 16px;
+}
+
+.cart_items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .cart ul {
@@ -126,10 +133,15 @@ h1 {
 
 .cart ul li {
     color: var(--color-rose-900);
-    margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 16px 0px;
+    border-bottom: 1px solid var(--color-rose-100);
+}
+
+.cart ul li:first-child {
+    padding-top: 0px;
 }
 
 .cart ul li h4 {
@@ -177,6 +189,43 @@ h1 {
 
 .cart ul li .icon-container:hover path {
     fill: var(--color-rose-900);
+}
+
+.cart .sum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-rose-900);
+}
+
+.cart .sum .text {
+    font-size: 14px;
+    color: var(--color-rose-900);
+}
+
+.cart .sum .price {
+    color: var(--color-rose-900);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cart .note {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0px;
+    background-color: var(--color-rose-50);
+    border-radius: 8px;
+}
+
+.confirm_btn {
+    color: var(--color-white);
+    background-color: var(--color-red);
+    outline: none;
+    border: none;
+    border-radius: 999px;
+    padding: 16px 0px;
 }
 
 /* Cart Item Buttons **** */
