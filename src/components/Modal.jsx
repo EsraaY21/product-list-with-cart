@@ -4,17 +4,17 @@ import { AppContext } from "../Context/AppContext";
 import { useContext } from "react";
 
 export default function Modal() {
-  const { cartItems } = useContext(AppContext);
-
-  const totalQuantity = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const { cartItems, handleModalClose, clearCart } = useContext(AppContext);
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
+
+  const handleStartNewOrder = () => {
+    clearCart();
+    handleModalClose();
+  };
 
   return (
     <div className="modal_overlay">
@@ -54,7 +54,9 @@ export default function Modal() {
           </div>
         </div>
 
-        <button className="start_new_btn">Confirm Order</button>
+        <button className="start_new_btn" onClick={() => handleStartNewOrder()}>
+          Start New Order
+        </button>
       </div>
     </div>
   );

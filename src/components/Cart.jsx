@@ -4,7 +4,8 @@ import RemoveIcon from "./icons/RemoveIcon";
 import CarbonNeutralIcon from "./icons/CarbonNeutralIcon";
 
 export default function Cart() {
-  const { cartItems, handleCartUpdate } = useContext(AppContext);
+  const { cartItems, handleCartUpdate, handleModalOpen } =
+    useContext(AppContext);
 
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -57,7 +58,9 @@ export default function Cart() {
             </p>
           </div>
 
-          <button className="confirm_btn">Confirm Order</button>
+          <button className="confirm_btn" onClick={() => handleModalOpen()}>
+            Confirm Order
+          </button>
         </div>
       ) : (
         <>

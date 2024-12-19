@@ -5,7 +5,7 @@ import { AppContext } from "./Context/AppContext";
 import { useContext } from "react";
 
 function App() {
-  const { data } = useContext(AppContext);
+  const { data, openModal } = useContext(AppContext);
 
   return (
     <>
@@ -20,8 +20,7 @@ function App() {
         </div>
         <Cart />
       </main>
-
-      <Modal />
+      {openModal ? <Modal /> : ""}
     </>
   );
 }

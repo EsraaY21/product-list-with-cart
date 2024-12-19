@@ -1,10 +1,20 @@
 import { createContext, useState } from "react";
 import data from "../data.json";
+import React from "react";
 
 export const AppContext = createContext();
 
 export default function AppProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
+
+  const handleModalOpen = () => {
+    setOpenModal(true);
+  };
 
   const handleCartUpdate = (id, action) => {
     const dessert = data.find((item) => item.id === id);
@@ -37,6 +47,10 @@ export default function AppProvider({ children }) {
     });
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -44,6 +58,10 @@ export default function AppProvider({ children }) {
         setCartItems,
         data,
         handleCartUpdate,
+        handleModalOpen,
+        openModal,
+        handleModalClose,
+        clearCart,
       }}
     >
       {children}
