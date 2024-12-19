@@ -1,4 +1,5 @@
 import Cart from "./components/Cart";
+import Modal from "./components/Modal";
 import ProductCard from "./components/ProductCard";
 import { AppContext } from "./Context/AppContext";
 import { useContext } from "react";
@@ -19,6 +20,8 @@ function App() {
         </div>
         <Cart />
       </main>
+
+      <Modal />
     </>
   );
 }

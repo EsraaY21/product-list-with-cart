@@ -29,7 +29,7 @@ export default function Cart() {
                   <h4>{item.name}</h4>
                   <div className="details">
                     <span className="quantity">{item.quantity}x</span>
-                    <span className="price">@ ${item.price}</span>
+                    <span className="price">@ ${item.price.toFixed(2)}</span>
                     <span className="total">
                       ${(item.price * item.quantity).toFixed(2)}
                     </span>
