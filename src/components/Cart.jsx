@@ -27,7 +27,7 @@ export default function Cart() {
             {cartItems.map((item) => (
               <li key={item.id}>
                 <div className="text-4">
-                  <h4>{item.name}</h4>
+                  <h4 className="ellipsis">{item.name}</h4>
                   <div className="details">
                     <span className="quantity">{item.quantity}x</span>
                     <span className="price">@ ${item.price.toFixed(2)}</span>

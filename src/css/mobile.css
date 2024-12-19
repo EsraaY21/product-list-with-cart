@@ -11,5 +11,9 @@
         aspect-ratio: 1.542;
     }
 
+    .modal_box {
+        padding: 24px;
+    }
+
 
 }

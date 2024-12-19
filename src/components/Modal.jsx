@@ -31,7 +31,7 @@ export default function Modal() {
                   <div className="image_box">
                     <img src={item.image.thumbnail} alt={item.name} />
                     <div>
-                      <h4>{item.name}</h4>
+                      <h4 className="ellipsis">{item.name}</h4>
                       <div className="details">
                         <span className="quantity">{item.quantity}x</span>
                         <span className="price">

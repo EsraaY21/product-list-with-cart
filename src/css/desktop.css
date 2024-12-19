@@ -133,10 +133,6 @@ h1 {
     gap: 24px;
 }
 
-/* .cart ul {
-    display: flex;
-    flex-direction: column;
-} */
 
 .cart ul li {
     color: var(--color-rose-900);
@@ -352,6 +348,7 @@ button span {
     display: flex;
     padding-top: 5%;
     justify-content: center;
+    z-index: 1000;
 }
 
 .modal_box {
@@ -360,7 +357,8 @@ button span {
     background-color: var(--color-white);
     border-radius: 12px;
     padding: 40px;
-    height: fit-content
+    height: fit-content;
+    animation: slideUp 0.3s ease-in-out;
 }
 
 .modal_box svg {
@@ -456,4 +454,25 @@ button span {
 .modal_box .start_new_btn {
     width: 100%;
     margin-top: 24px;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: inline-block;
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
