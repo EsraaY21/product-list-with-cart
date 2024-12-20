@@ -1,12 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import data from "../data.json";
 import React from "react";
 
 export const AppContext = createContext();
 
 export default function AppProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCartFromLocalStorage = localStorage.getItem("cartItems");
+    return savedCartFromLocalStorage
+      ? JSON.parse(savedCartFromLocalStorage)
+      : [];
+  });
   const [openModal, setOpenModal] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const handleModalClose = () => {
     setOpenModal(false);
