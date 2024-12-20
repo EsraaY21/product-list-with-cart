@@ -1,4 +1,3 @@
-import React from "react";
 import OrderConfirmedIcon from "./icons/OrderConfirmedIcon";
 import { AppContext } from "../Context/AppContext";
 import { useContext } from "react";
@@ -16,9 +15,14 @@ export default function Modal() {
     handleModalClose();
   };
 
+  // when i click on the modal dont activate the functions of the parent (which is the overlay)
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="modal_overlay">
-      <div className="modal_box">
+    <div className="modal_overlay" onClick={handleModalClose}>
+      <div className="modal_box" onClick={stopPropagation}>
         <OrderConfirmedIcon />
         <h1 className="text-1">Order Confirmed</h1>
         <h2>We hope you enjoy your food!</h2>
